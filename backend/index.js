@@ -1,5 +1,6 @@
 import express from "express";
 import db from './firebaseConfig.cjs'
+import IncidentRoute from './routes/IncidentRoute.js'
 
 /*
   IMPORTANT: Do not implement endpoints here.
@@ -15,6 +16,11 @@ import db from './firebaseConfig.cjs'
   - Programmer: Thisara
     Date: 5/10/2024 at 10.50pm
     Message: Created folder and structure of project
+  ==============================================
+  Modification History:
+  - Programmer: Thisara
+    Date: 5/11/2024 at 12.11am
+    Message: Created incident controller endpoint add function
   ==============================================
 */
 
@@ -34,6 +40,8 @@ app.post('/api/create', async (req, res) => {
         res.status(500).json({error});
     }
 });
+
+app.use('/api', IncidentRoute)
 
 
 const port=5000
