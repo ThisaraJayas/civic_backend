@@ -1,4 +1,5 @@
 import express from 'express';
+import {addItem} from '../controllers/IncidentController.js'
 /*
   ==============================================
   Modification History:
@@ -10,6 +11,6 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/', scrapListing);
+router.post('/add', addItem);
 
 export default router;
