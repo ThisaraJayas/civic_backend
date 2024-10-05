@@ -11,7 +11,7 @@ app.post('/api/create', async (req, res) => {
         const ref = await db.collection("items").add(newItem);
         res.status(201).json({ id: ref.id, ...newItem });
     } catch (error) {
-        res.status(500).json({ error: 'Failed to create item' });
+        res.status(500).json({error});
     }
 });
 
